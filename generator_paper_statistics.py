@@ -1,3 +1,4 @@
+
 #!/usr/bin/python
 
 import os
@@ -6,10 +7,10 @@ import csv
 import statistics
 from math import isnan
 
-inputHierarchies=r"U:\calculateHierarchical\set"
-outputVisualisations=r"U:\calculateHierarchical\set00\res"
-hierarchyVisualisationJarPath=r"U:\calculateHierarchical\hierarchy_visualisator18.jar"
-java_executable_path=r'C:\Program Files\Java\jre1.8.0_111\bin\java.exe'
+inputHierarchies=r"FINAL_100_repeats/set00"
+outputVisualisations=r"RES/set00"
+hierarchyVisualisationJarPath=r"hierarchy_visualisator.jar"
+java_executable_path=r'/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/bin/java'
 
 print("Hello, Python!")
 
@@ -121,7 +122,6 @@ for root, dirs, files in os.walk(inputHierarchies):
 												if len(eachLevelNumberOfLeaves) < (heightNumber+1):
 													eachLevelNumberOfLeaves.append([])
 												eachLevelNumberOfLeaves[heightNumber].append(float(histogramRow[6]))
-												
 										elif rows[rowIndex][0] == r"Branching factor histogram":
 											for elem in zip(rows[rowIndex+1][1:], rows[rowIndex+2][1:]):
 												if elem[0] in branchingFactorWithAvgCountHistogram:
